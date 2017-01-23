@@ -1,0 +1,112 @@
+        <!-- ********************************
+          Some shit maps and graps were here
+  
+      ***********************************-->    
+
+  <div ng-controller = "TablesPageCtrl">
+  <div class="col-md-12">
+    <div class="row max-height max-width">
+      <div class="col-md-2"
+           ba-panel
+           ba-panel-title="Product"
+           ba-panel-class="with-scroll button-panel">
+          <div ng-click = "selectAllProduct();">Select All
+                  <span class="pull-right" >
+                    <span class="glyphicon glyphicon-ok" ng-show = "selectAllProducts==true">
+                    </span>
+                  </span>
+          </div>
+          <br>
+          <div class = "btn-group" ng-repeat = "product in products">
+              <div class="button-wrapper">
+                <button ng-click = "selectProduct(product);" type="button" class="btn btn-primary btn-sm">{{product.productCode}}
+                  <span class="pull-right" ng-if = "product.isSelected==true">
+                    <span class="glyphicon glyphicon-ok">
+                    </span>
+                  </span>
+                </button>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-2"
+           ba-panel
+           ba-panel-title="Quarter"
+           ba-panel-class="with-scroll button-panel">
+          <div ng-click = "selectAllQuarter();">Select All
+                  <span class="pull-right" >
+                    <span class="glyphicon glyphicon-ok" ng-show = "selectAllQuarters==true">
+                    </span>
+                  </span>
+          </div>
+          <br>
+          <div class = "btn-group" ng-repeat = "quarter in quarters">
+              <div class="button-wrapper">
+                <button ng-click = "selectQuarter(quarter);" type="button" class="btn btn-primary btn-sm">{{quarter.quarter}}
+                  <span class="pull-right" ng-if = "quarter.isSelected==true">
+                    <span class="glyphicon glyphicon-ok">
+                    </span>
+                  </span>
+                </button>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-2"
+           ba-panel
+           ba-panel-title="Pumping Stations"
+           ba-panel-class="with-scroll button-panel">
+          <div ng-click = "selectAllPumingStation();">Select All
+                  <span class="pull-right" >
+                    <span class="glyphicon glyphicon-ok" ng-show = "selectAllPumpingStations==true">
+                    </span>
+                  </span>
+          </div>
+          <br>
+          <div class = "btn-group" ng-repeat = "station in pumpingStations">
+              <div class="button-wrapper">
+                <button ng-click = "selectPumingStation(station);" type="button" class="btn btn-primary btn-sm">{{station.PUMPING_FROM}}
+                  <span class="pull-right" ng-if = "station.isSelected==true">
+                    <span class="glyphicon glyphicon-ok">
+                    </span>
+                  </span>
+                </button>
+              </div>
+          </div>
+      </div>
+
+       <div class="col-md-2">
+            <div id="demoForm" name="demoForm" class="button-wrapper" ng-form="demoForm" novalidate>
+              <div class="col-md-12">
+                  <label class = "pull-left">Start Date</label>
+                  <div class="input-form">
+                      <input type="text" class="form-control" uib-datepicker-popup="{{dateFormat}}" ng-model="parent.startDate" name="startDate" is-open="startDatePopup.opened" datepicker-options="startDateOptions" ng-click="OpenstartDate()" placeholder="Start Date"/>
+                  </div>  
+              </div>
+              <div class="col-md-12">
+                  <label class = "pull-left">End Date</label>
+                  <div class="input-form">
+                      <input type="text" class="form-control" uib-datepicker-popup="{{dateFormat}}" ng-model="parent.endDate" is-open="endDatePopup.opened" datepicker-options="endDateOptions" ng-required="true" close-text="Close" ng-click="OpenendDate()" placeholder="End Date" />
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+<div class="col-md-12" ng-controller="chartJs2DCtrl">
+    <div ba-panel ba-panel-title="Bars" ba-panel-class="with-scroll ">
+        <div class="chartjs-canvas-holder-third-row">
+            <canvas id="bar" class="chart chart-bar"
+                    chart-data="data" chart-labels="labels" chart-series="series" chart-update="updateC">
+            </canvas>
+        </div>
+    </div>
+</div>
+
+<div class="row" >
+  <div class="col-md-12>
+    <div ba-panel ba-panel-title="Delivery Data" ba-panel-class="with-scroll">
+      <div include-with-scope="app/pages/tables/widgets/editableTable.html"></div>
+    </div>
+  </div>
+</div>

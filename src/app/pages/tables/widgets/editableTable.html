@@ -1,0 +1,36 @@
+<div class="horizontal-scroll">
+  <table class="table" st-table="editableTableData">
+    <thead>
+    <tr>
+      <th st-sort="firstName">Refinery</th>
+      <th st-sort="lastName">SEQ_NO</th>
+      <th st-sort="username">DATE</th>
+      <th st-sort="email">PUMPING_FROM</th>
+      <th st-sort="age">BATCH</th>
+      <th st-sort="age">TANK</th>
+      <th st-sort="age">QUANTITY</th>
+      <th st-sort="age">CODE</th>
+      <th st-sort="age">PRODUCT</th>
+      <th st-sort="age">MONTH</th>
+      <th st-sort="age">YEAR</th>
+      <th st-sort="age">QUARTER</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in (filteredItems = editableTableData | filter:intterlivedDateCheck | filter:quarterFilter | filter:productFilter | filter:pumpingStationFilter | filter:particularDateFilter)" class="editable-tr-wrap">
+      <td><span>{{item.Refinery}}</span></td>
+      <td><span>{{item.SEQ_NO}}</span></td>
+      <td><span>{{item.DATE}}</span></td>
+      <td><span>{{item.PUMPING_FROM}}</span></td>
+      <td><span>{{item.BATCH}}</span></td>
+      <td><span>{{item.QUANTITY}}</span></td>
+      <td><span>{{item.TANK}}</span></td>
+      <td><span>{{item.CODE}}</span></td>
+      <td><span>{{item.PRODUCT}}</span></td>
+      <td><span>{{item.MONTH}}</span></td>
+      <td><span>{{item.YEAR}}</span></td>
+      <td><span>{{item.QUARTER}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
